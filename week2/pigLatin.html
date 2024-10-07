@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pig Latin translator</title>
+</head>
+<body>
+
+<script>
+    // takes a prompt to confirm user's word
+    phrase = prompt("Enter a phrase");
+    document.write("You entered - ", phrase);
+
+    // Your pig-latin translation code here name: Joshua Cepeda, 10/06/24
+    lowphrase = phrase.toLowerCase();
+    let pigword;
+
+    // if the word begins with a vowel, add 'way' to the end
+    // however, if begins with consonant or two, put those letters on the end and add 'ay'
+    if (lowphrase.startsWith("a") || lowphrase.startsWith("e") || lowphrase.startsWith("i") || lowphrase.startsWith("o") || lowphrase.startsWith("u")) {
+        pigword = lowphrase + "way";
+    } else {
+        let vowelsearch = lowphrase.search(/[aeiou]/);
+        pigword = lowphrase.slice(vowelsearch) + lowphrase.slice(0, vowelsearch) + "ay";
+    }
+
+    document.write(" , so your Pig Latin word is: " + pigword);
+
+
+
+</script>
+
+</body>
+</html>
