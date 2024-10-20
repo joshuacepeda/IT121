@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student grades</title>
+</head>
+<body>
+
+<script>
+    const grades = "jim|25, sue|32, mary|34, ann|22, ted|28, frank|15, lisa|19, mike|30, ahn|26, vishaya|27";
+
+    // splitting grades
+    let student_data = grades.split(", ");
+
+    // find number of students
+    let totalStudents = student_data.length;
+    
+    // make lists of names and scores
+    let scores = []; 
+    let student_names = []; 
+
+    //process students incrementally
+    for (let i = 0; i < student_data.length; i++) {
+        let [name, score] = student_data[i].split("|");
+        name = name.charAt(0).toUpperCase() + name.slice(1);
+        score = parseInt(score); //convert score to int
+        student_names.push(name); //puts names into list made above
+        scores.push(score); //puts scores into list made above
+        document.write(name + ": " + score + "<br>"); //prints data and starts new line
+    } 
+
+    //prints total students, lowest score, highest score, and average
+    let lowscore = Math.min(...scores);
+    let highscore = Math.max(...scores);
+    let averagescore = (scores.reduce((a, b) => a+b, 0)) / totalStudents;
+
+    document.write("Lowest score is " + lowscore + "<br>");
+    document.write("Highest score is " + highscore + "<br>");
+    document.write("Average score is " + averagescore + "<br>");
+
+</script>
+
+</body>
+</html>
