@@ -3,4 +3,4 @@
 var firstname = "Joshua";
 var lastname = "Cepeda";
 var yearsofstudy = "1 full year";
-var goal = "rise up the ranks at AWS";
+var goal = "make applicable uses of these new skills consistently";
