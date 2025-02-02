@@ -42,6 +42,27 @@ const validatePassword = (password) => {
     return true; 
 };
 
+// updating the validateForm for the additional checks
+const validateForm = (myForm) => {
+    let firstname = myForm.firstname.value.trim();
+    let lastname = myForm.lastname.value.trim();
+    let password = myForm.password.value.trim();
+
+    // is firstname missing?
+    if (firstname === "") {
+        $("#message").html("Error: First name is missing");
+        return false;
+    }
+
+    // is lastname missing?
+    if (lastname === "") {
+        $("#message").html("Error: Last name is missing.");
+        return false;
+    }
+
+    
+}
+
 </script>
 
 </body>
