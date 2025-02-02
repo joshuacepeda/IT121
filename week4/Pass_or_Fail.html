@@ -4,8 +4,21 @@
     <meta charset="UTF-8">
     <title>Student grades</title>
 </head>
+
 <body>
 
+<h1>Functions & validation</h1>
+
+<form id="form1" action="#" onsubmit="return validateForm(this);">
+    first name: <input type="text" name="firstname"><br>
+    last name: <input type="text" name="lastname"><br>
+    password: <input type="text" name="password"><br>
+    
+    <button >Check</button>
+</form>
+    
+<hr><div id="message"></div>
+    
 <script>
     
 // define validatePassword and check to see if is
