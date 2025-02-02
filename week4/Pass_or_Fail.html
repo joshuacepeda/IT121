@@ -20,7 +20,15 @@ const validatePassword = (password) => {
     if (!/[A-Z]/.test(password)) {
         return false; // No uppercase Letter
     }
-}
+
+    if (!/[a-z]/.test(password)) {
+        return false; // No lowercase letter
+    }
+
+    //otherwise return true because it is a valid password
+    return true; 
+};
+
 </script>
 
 </body>
