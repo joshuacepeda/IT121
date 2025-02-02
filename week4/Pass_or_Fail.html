@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student grades</title>
+</head>
+<body>
+
+<script>
+    
+// define validatePassword and check to see if is
+// at least 8 characters long
+// contains at least one uppercase letter
+// contains at least one lowercase letter
+const validatePassword = (password) => {
+    if (password.length < 8) {
+        return false; // Password too short
+    }
+
+    if (!/[A-Z]/.test(password)) {
+        return false; // No uppercase Letter
+    }
+}
+</script>
+
+</body>
+</html>
