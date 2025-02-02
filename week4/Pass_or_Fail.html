@@ -14,7 +14,7 @@
     last name: <input type="text" name="lastname"><br>
     password: <input type="text" name="password"><br>
     
-    <button >Check</button>
+    <button type="submit">Check</button>
 </form>
     
 <hr><div id="message"></div>
@@ -60,8 +60,16 @@ const validateForm = (myForm) => {
         return false;
     }
 
-    
-}
+    // use function created before to validate the password
+    if (!validatePassword(password)) {
+        $("#message").html("Error: Password has to be at least 8 characters long, contains 1 uppercase, and 1 lowercase letter.");
+        return false;
+    }
+
+    // everything is valid
+    $("#message").html("Your form is valid! Success!");
+    return false;
+};
 
 </script>
 
