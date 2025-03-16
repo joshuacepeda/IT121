@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script
+          src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+          crossorigin="anonymous"></script>
+</head>
+<body>
+
+<h1>Robo Dealer</h1>
+
+  <button onclick="dealHand();">Deal Hand</button>
+
+<hr><div id="card_hand"></div>
+
+<script>
+
+  /* define Card object and deck of cards here */
+const suits = ["Clubs", "Spades", "Hearts", "Diamonds"];
+
+//This way also gives the non number(King) cards a value 
+const cards = {
+    2:"2",3:"3",4:"4",5:"5",6:"6",7:"7",8:"8",9:"9",10:"10",11:"Jack",12:"Queen",
+    13:"King",14:"Ace"
+};
+
+//Generate an array of 52 card objects
+const createdeck = () => {
+    let deck = [];
+    for (let suit of suits) {
+        for (let card in cards) {
+            deck.push({ value: parseInt(card), suit:suit });
+        }
+    }
+    return deck;
+}
+
+
+  const dealHand = () => {
+
+    /* code to deal a card hand goes here */
+    let deck = createdeck();
+    let hand = [];
+
+    for (let i = 0; i < 5; i++) {
+        let randomcard = Math.floor(Math.random() * deck.length);
+        hand.push(deck[randomcard]);
+        deck.splice(randomcard, 1);
+    }
+
+
+    // update 'card_hand' DIV with appropriate information
+    let button_clicked = "Here is your hand: <ul>";
+    hand.forEach(card => {
+        button_clicked += `<li>${cards[card.value]} of ${card.suit}</li>`;
+    });
+    button_clicked += "</ul>";
+
+    $("#card_hand").html(button_clicked);
+
+    return false; // prevent page reload
+  }
+
+</script>
+
+</body>
+</html>
